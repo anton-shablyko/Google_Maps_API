@@ -2,7 +2,7 @@ import googlemaps
 import json
 import urllib
 
-API_KEY = 'AIzaSyB_a4zeHMIAWCfPLr9djBZqGOsy5XP14Gs'
+API_KEY = My_API_KEY
 
 # todo: create def to call place details api based on the place id.
 # todo: try to replace googlemaps library with the urlopen and json libraries
@@ -22,7 +22,8 @@ def get_place_details(location, radius, types, key):
              '&radius={1}'
              '&types={2}'
              '&sensor=false&key={3}').format(location, radius, types, auth_key)
-    print(MyUrl)
+    return(MyURL)
+    #print(MyUrl)
 
     response = urllib.request.urlopen(MyUrl).read().decode('utf8')
     json_result = json.loads(response)
