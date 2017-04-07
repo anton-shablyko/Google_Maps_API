@@ -23,7 +23,6 @@ def get_place_details(location, radius, types, key):
              '&types={2}'
              '&sensor=false&key={3}').format(location, radius, types, auth_key)
     return(MyURL)
-    #print(MyUrl)
 
     response = urllib.request.urlopen(MyUrl).read().decode('utf8')
     json_result = json.loads(response)
